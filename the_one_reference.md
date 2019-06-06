@@ -1,3 +1,5 @@
+# This document is a draft and is under active development.
+
 ## `ActiveRecord_Relation` (array of records)
 
 ### All `Array` methods
@@ -405,49 +407,22 @@ class Actor < ApplicationRecord
 end
 ```
 
-## Basic Ruby syntax
+## String
 
-`object.method` or `object.method(args)` for methods that need arguments.
+### .concat (.+)
 
-Syntax for creating a new variable of a Class and storing them in a varible:  
-
-`var = my_class.new`
-
-**.class method:**  
-
-Returns the class of the object.  
-
-`"Hello".class # => String`  
-`2.class # => Integer`  
-`2.3.class # => Float`
-`var.class # => my_class`
-
-#### Exceptions:
-
-There are a few methods that do not follow the core syntax.
-
-**rand:**  
-Returns a random integer within a range when given an Integer as an argument.  
-`rand(3) # returns a whole number between 0 and 2`  
-Returns a random integer between the lower limit and the upper limit when given a Range as an argument.  
-`rand(1..10) # returns a whole number between 1 and 10, including 1 and 10`
-Returns a random decimal between 0 and 1 when not given any argument.  
-`rand # returns a decimal between 0 and 1`  
-
-***Note:***  
-With Ruby `Range`s, two dots means inclusive of the second value, and three dots means exclusive of the second value. E.g., `(1..4)` is 1, 2, 3, and 4; `(1...4)` is only 1, 2, and 3.
-
-### Class String
-
-**.concat (.+ / +) method:**  
 Appends the given arguments to a string. when given an integer as an argument, it converts the integer into ASCII code.  
-`"hi".concat(33)`
-> "hi!"   
 
-`"Rub".concat(121)`  
->"Ruby"
+```ruby
+"hi".concat(33) # => "hi!"
+```
+
+```ruby
+"Rub".concat(121)  # => "Ruby"
+```
 
 When given a string literal as an argument, it adds that string to the original string. `.+` or `+` is shorthand for `.concat` method. Each line of code below will give the same output.  
+
 `"hi".concat(" there")`  
 `"hi".+(" there")`  
 `"hi" +(" there")`  
